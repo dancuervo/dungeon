@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Character Creator</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div>
+            <div>
+                    <img src="" alt="" srcset="">
+                    <h1>Crie seu aventureiro</h1>
+        
+            </div>
+
+            <div class="row">
+                    <div class="column">
+                        <h3>Força</h3>
+                        <p id="strength" class="dice">0</p>
+                    </div>
+                    <div class="column">
+                        <h3>Inteligência</h3>
+                        <p id="inteligence" class="dice">0</p>    
+                    </div>
+                    <div class="column">
+                        <h3>Agilidade</h3>
+                        <p id="dextery" class="dice">0</p>    
+                    </div>
+                    <div>
+                        <hr>
+                            <button id="roll" class="important">
+                                    Roll the dice!
+                            </button>
+                    </div>
+                    <br>
+            </div>
+            
+            <br>
+
+            <div>
+            <input type="text" id='nome'> | | |
+            <select name="raca" id="raca">
+                <option value="humano">Humano</option>
+                <option value="elfo">Elfo</option>
+                <option value="anão">Anão</option>
+            </select>
+            
+            <hr>
+
+            <button id='crear' class="important">
+                Criar
+            </button>
+            </div>
+        
+            <p id='ficha'></p>
+    </div>
+    <div id='adventure'>
+
+    </div>
+    
+    
+</body>
+<script src="dungeon_init.js"></script>
+<script src="dungeon_character_creator.js"></script>
+</html>

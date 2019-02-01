@@ -1,0 +1,21 @@
+  body{
+    text-align: center;
+  }
+
+  .column {
+    float: left;
+    width: 33.33%;
+    background: mediumaquamarine;
+    }
+
+ /* Clear floats after the columns */
+ .row:after {
+    content: "";
+    display: table;
+    clear: both;
+   }
+
+   .important {
+       background-color: red;
+       color: white;
+   }
