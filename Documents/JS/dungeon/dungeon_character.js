@@ -1,6 +1,8 @@
 
-    let dungeon_char = {
-        'character' : {
+
+
+    let dungeon_character = {
+        'name' : '',
             'attributes' : {
                     'strength' : 0,
                     'inteligence' : 0,
@@ -12,6 +14,6 @@
                     'image': '',
                     'story' : ''
                 }
-        }
-       
-    }
+    };
+
+    export default dungeon_character;

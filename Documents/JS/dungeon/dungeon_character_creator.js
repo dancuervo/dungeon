@@ -1,7 +1,11 @@
 
+import dungeon_character from './dungeon_character.js';
+
+
 document.addEventListener('DOMContentLoaded', function(){
           
-    /* roll character attributes */
+    /* roll character attributes on CLICK*/
+
     let roll = document.querySelector('#roll');
     roll.addEventListener('click', function(){
         
@@ -18,7 +22,9 @@ document.addEventListener('DOMContentLoaded', function(){
         roll.style.backgroundColor = 'grey';
 
     });
-    
+
+    console.log(dungeon_character);
+
     /* select character name, race and attributes and save */
     let crear = document.querySelector('#crear');
     crear.addEventListener('click', function(){
@@ -27,15 +33,36 @@ document.addEventListener('DOMContentLoaded', function(){
         crear.style.backgroundColor = 'grey';
 
 
-       let strength = document.querySelector('#strength').innerHTML;
-       let inteligence = document.querySelector('#inteligence').innerHTML;
-       let dextery = document.querySelector('#dextery').innerHTML;
-       let name = document.querySelector('#nome').value;
-       let race = document.querySelector('#raca').value;
-       let ficha = document.querySelector('#ficha');
+       let strengthChar = document.querySelector('#strength').innerHTML;
+       let inteligenceChar = document.querySelector('#inteligence').innerHTML;
+       let dexteryChar = document.querySelector('#dextery').innerHTML;
+       let nameChar = document.querySelector('#nome').value;
+       let raceChar = document.querySelector('#raca').value;
+       let textoChar = document.querySelector('#texto');
+
+    /*
+      write character stats, name and race in dungeon{}
+    */
+
+        dungeon_character.name                      = nameChar;
+        dungeon_character.attributes.strength       = strengthChar;
+        dungeon_character.attributes.inteligence    = inteligenceChar;
+        dungeon_character.attributes.dextery        = dexteryChar;
+
+        let dungeon_save = localStorage.setItem('dungeon_save' , JSON.stringify(dungeon_character));
+ 
+        let resultado = localStorage.getItem('dungeon_save')? console.log('listo!') : console.log('shit!');
+
+        resultado;
+
+
     
-    /* Greetings */
-       ficha.innerHTML = `Saudações ${name}. Você não é o primeiro ${race} a se aventurar pelo mundo...<br>
+    /* Narrator Speech 
+        text resuming character data
+        Save stats in Dungeon jSON
+        Button continue
+    */
+       texto.innerHTML = `Saudações ${nameChar}. Você não é o primeiro ${raceChar} a se aventurar pelo mundo...<br>
                           Entretanto, vejo algo especial em você...<br>
                           Que seu nome seja lembrado!`
 
@@ -48,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function(){
         let btn = document.createElement("button");
         let text = document.createTextNode("Adventure-se!");
         let p = document.createElement('p');
+
         btn.appendChild(text);
         p.appendChild(btn);
         adventure.appendChild(p);
@@ -55,8 +83,4 @@ document.addEventListener('DOMContentLoaded', function(){
         
     });
     
-    
-    /*
-    
-    */
 });

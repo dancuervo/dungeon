@@ -1,6 +1,6 @@
 //import or create dungeon_save
-(function(){
 
+document.addEventListener('DOMContentLoaded', function(){
     let dungeon;
 
     if(localStorage.getItem('dungeon_save')){
@@ -14,5 +14,4 @@
         dungeon = localStorage.getItem('dungeon_save');
 
     }    
-
-})();
+});
