@@ -1,8 +1,8 @@
 
-
+//JSON with character info
 
     let dungeon_character = {
-        'name' : '',
+            'name' : '',
             'attributes' : {
                     'strength' : 0,
                     'inteligence' : 0,

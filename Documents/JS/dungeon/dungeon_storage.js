@@ -1,6 +1,7 @@
-//import or create dungeon_save
+// 1 - import or create dungeon_save
 
-document.addEventListener('DOMContentLoaded', function(){
+ let dungeonStorage = function(){
+
     let dungeon;
 
     if(localStorage.getItem('dungeon_save')){
@@ -13,5 +14,9 @@ document.addEventListener('DOMContentLoaded', function(){
  
         dungeon = localStorage.getItem('dungeon_save');
 
-    }    
-});
+    }
+
+    return dungeon;
+ }
+
+ export default dungeonStorage;

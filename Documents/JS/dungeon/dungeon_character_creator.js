@@ -1,9 +1,16 @@
 
+import dungeonStorage from './dungeon_storage.js';
 import dungeon_character from './dungeon_character.js';
+import diceRoller from './dice.js';
+import * from './the_dungeon.js';
 
 
 document.addEventListener('DOMContentLoaded', function(){
-          
+    
+    //init
+
+    dungeonStorage();
+
     /* roll character attributes on CLICK*/
 
     let roll = document.querySelector('#roll');
@@ -12,9 +19,10 @@ document.addEventListener('DOMContentLoaded', function(){
         let dice = document.querySelectorAll('.dice');
         let diceL = dice.length;
 
+        
         for( let i = 0; i < diceL; i ++ ){
         
-            dice[i].innerHTML = Math.floor(Math.random() * 6) + 1;
+            dice[i].innerHTML = diceRoller(6);
                         
         }
 
@@ -22,8 +30,6 @@ document.addEventListener('DOMContentLoaded', function(){
         roll.style.backgroundColor = 'grey';
 
     });
-
-    console.log(dungeon_character);
 
     /* select character name, race and attributes and save */
     let crear = document.querySelector('#crear');
@@ -50,19 +56,14 @@ document.addEventListener('DOMContentLoaded', function(){
         dungeon_character.attributes.dextery        = dexteryChar;
 
         let dungeon_save = localStorage.setItem('dungeon_save' , JSON.stringify(dungeon_character));
- 
-        let resultado = localStorage.getItem('dungeon_save')? console.log('listo!') : console.log('shit!');
-
-        resultado;
-
-
-    
-    /* Narrator Speech 
+        
+        /* Narrator Speech 
         text resuming character data
         Save stats in Dungeon jSON
         Button continue
-    */
-       texto.innerHTML = `Saudações ${nameChar}. Você não é o primeiro ${raceChar} a se aventurar pelo mundo...<br>
+        */
+       
+        texto.innerHTML = `Saudações ${nameChar}. Você não é o primeiro ${raceChar} a se aventurar pelo mundo...<br>
                           Entretanto, vejo algo especial em você...<br>
                           Que seu nome seja lembrado!`
 
