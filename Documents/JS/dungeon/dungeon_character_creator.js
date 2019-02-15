@@ -2,7 +2,7 @@
 import dungeonStorage from './dungeon_storage.js';
 import dungeon_character from './dungeon_character.js';
 import diceRoller from './dice.js';
-import * from './the_dungeon.js';
+import { Greetings } from './the_dungeon.js';
 
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -63,10 +63,13 @@ document.addEventListener('DOMContentLoaded', function(){
         Button continue
         */
        
-        texto.innerHTML = `Saudações ${nameChar}. Você não é o primeiro ${raceChar} a se aventurar pelo mundo...<br>
+        texto.innerHTML = Greetings(nameChar, raceChar);
+        
+        /* texto.innerHTML = `Saudações ${nameChar}. Você não é o primeiro ${raceChar} a se aventurar pelo mundo...<br>
                           Entretanto, vejo algo especial em você...<br>
                           Que seu nome seja lembrado!`
-
+        */
+       
         let adventure = document.querySelector('#adventure');
         //old wizard
         let image = document.createElement('img');

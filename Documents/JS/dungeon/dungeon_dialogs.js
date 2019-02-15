@@ -23,4 +23,4 @@ function Greetings(nameChar, raceChar){
 
 // conclusion
 
-export default { Greetings }
+export { Greetings }
