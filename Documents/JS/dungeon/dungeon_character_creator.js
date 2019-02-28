@@ -1,12 +1,9 @@
-
+//imports//imports
 import dungeonStorage from './dungeon_storage.js';
 import dungeon_character from './dungeon_character.js';
 import diceRoller from './dice.js';
-import { Greetings } from './the_dungeon.js';
-
-
-document.addEventListener('DOMContentLoaded', function(){
-    
+import * as dialog from './dungeon_dialogs.js';
+  
     //init
 
     dungeonStorage();
@@ -59,17 +56,11 @@ document.addEventListener('DOMContentLoaded', function(){
         
         /* Narrator Speech 
         text resuming character data
-        Save stats in Dungeon jSON
         Button continue
         */
        
-        texto.innerHTML = Greetings(nameChar, raceChar);
-        
-        /* texto.innerHTML = `Saudações ${nameChar}. Você não é o primeiro ${raceChar} a se aventurar pelo mundo...<br>
-                          Entretanto, vejo algo especial em você...<br>
-                          Que seu nome seja lembrado!`
-        */
-       
+        texto.innerHTML = dialog.Greetings(nameChar, raceChar);
+
         let adventure = document.querySelector('#adventure');
         //old wizard
         let image = document.createElement('img');
@@ -86,5 +77,3 @@ document.addEventListener('DOMContentLoaded', function(){
 
         
     });
-    
-});
