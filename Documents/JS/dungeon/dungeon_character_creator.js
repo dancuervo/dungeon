@@ -66,10 +66,13 @@ import * as dialog from './dungeon_dialogs.js';
         let image = document.createElement('img');
         image.setAttribute('src', 'old_mage.jpg');
         adventure.appendChild(image);
+
         //button aventure-se
-        let btn = document.createElement("button");
-        let text = document.createTextNode("Adventure-se!");
+        let btn = document.createElement('button');
+        let text = document.createTextNode('Adventure-se!');
         let p = document.createElement('p');
+
+        btn.setAttribute('onclick', 'location.reload();');
 
         btn.appendChild(text);
         p.appendChild(btn);
