@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clases</title>
+</head>
+<body>
+    <div>
+        <p id="datos">
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="surname" placeholder="Surname">
+            <input type="text" name="age" placeholder="Age">
+        </p>
+        <button id='registrar'>Registrar</button>
+    </div>
+</body>
+<script src="script.js"></script>
+
+<script>
+    let registrar = document.querySelector('#registrar');
+    
+    var registrado;
+
+    registrar.addEventListener('click', function(){
+        
+        let data = document.querySelector('#datos');
+        let name = data.children['name'].value;
+        let surname = data.children['surname'].value;
+        let age = data.children['age'].value;
+
+        let data_object = {
+            'name': name,
+            'surname': surname,
+            'age': age
+        }
+
+        
+        registrado = data_object;
+        console.log(registrado);
+
+    });
+
+    
+
+</script>
+
+
+</html>
